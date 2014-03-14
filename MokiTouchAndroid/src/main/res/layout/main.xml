@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/big_root"
+              android:weightSum="20"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <LinearLayout
+            android:id="@+id/visible_view"
+            android:orientation="horizontal"
+            android:layout_weight="18"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+    <LinearLayout
+            android:id="@+id/button_view"
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:layout_height="48dp"
+            android:layout_width="match_parent"/>
+</LinearLayout>

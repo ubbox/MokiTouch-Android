@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!-- Disable this given check in this project -->
+    <issue id="MissingRegistered" severity="ignore" />
+    <issue id="OnClick" severity="ignore" />
+
+
+</lint>

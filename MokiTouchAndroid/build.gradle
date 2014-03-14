@@ -1,0 +1,64 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.7.+'
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+       url "https://raw.github.com/MokiMobility/MokiManageSDK/android"
+    }
+}
+
+apply plugin: 'android'
+
+dependencies {
+	compile 'com.android.support:support-v4:13.0.0'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.squareup.mimecraft:mimecraft:1.1.0'
+    compile 'commons-io:commons-io:2.4'
+    compile 'com.j256.ormlite:ormlite-android:4.47'
+    compile 'com.j256.ormlite:ormlite-core:4.47'
+    compile "com.mokimobility:MokiManageSDK:1.2.0"
+}
+
+android {
+    compileSdkVersion 17
+    buildToolsVersion "17.0.0"
+
+    defaultConfig {
+        minSdkVersion 13
+        targetSdkVersion 16
+    }
+    if (System.getenv("ANDROID_KEYSTORE") != null) {
+
+        // Building from jenkins
+        signingConfigs {
+            release {
+                storeFile file(System.getenv("ANDROID_KEYSTORE"))
+                storePassword System.getenv("ANDROID_KEYSTORE_PWD")
+                keyAlias System.getenv("ANDROID_KEY_ALIAS")
+                keyPassword System.getenv("ANDROID_KEY_PWD")
+            }
+        }
+        buildTypes {
+            release {
+                signingConfig signingConfigs.release
+            }
+        }
+    } else {
+
+        // Building from dev's machine
+        signingConfigs {
+            release {
+
+            }
+        }
+
+    }
+
+}

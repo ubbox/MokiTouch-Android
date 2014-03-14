@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MokiTouch 2</string>
+    <string name="title_activity_main">API TEST</string>
+    <string name="app_settings">APP SETTINGS</string>
+    <string name="menu_settings">MENU SETTINGS</string>
+    <string name="back">Back</string>
+    <string name="cancel">Cancel</string>
+    <string name="content">image</string>
+    <string name="settings">Settings</string>
+    <string name="logo_desc">logo</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="validIpLabel">Valid IP</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_ok">Ok</string>
+    <string name="dialog_admin_password">Admin Password</string>
+
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:baselineAligned="false"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white" >
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:onClick="backClicked"/>
+
+        <ImageView
+            android:id="@+id/backbutton"
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:contentDescription="@string/content"
+            android:src="@drawable/left_arrow"
+            android:scaleType="fitCenter" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@color/light_gray" />
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/breadcrumbs"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:layout_below="@id/header"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        class="com.moki.asm.views.BreadCrumbFragment"
+        android:background="#FFFFFF" />
+
+    <FrameLayout
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/breadcrumbs"
+        android:background="@color/light_gray" />
+
+</RelativeLayout>

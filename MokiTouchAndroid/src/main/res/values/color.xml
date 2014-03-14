@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <color name="dark_gray">#4c4c4c</color>
+    <color name="black">#000</color>
+    <color name="gradient_stroke">#8f9194</color>
+    <color name="gray">#c4c5c5</color>
+    <color name="light_gray">#f2f2f2</color>
+    <color name="moki_blue">#4dc6e8</color>
+    <color name="moki_blue_select">#674dc6e8</color>
+    <color name="white">#ffffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="very_light_gray">#AAAAAA</color>
+    <color name="light_blue">#e5f3f9</color>
+    <color name="dark_blue">#0089c9</color>
+
+</resources>

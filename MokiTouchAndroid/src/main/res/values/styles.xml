@@ -1,0 +1,16 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+
+    <style name="myBackgroundStyle" parent="@android:style/Theme.Holo.Light">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="NoOrangeListView" parent="@android:style/Widget.ListView">
+        <item name="android:listSelector">#00000000</item>
+        <item name = "android:focusable">false</item>
+    </style>
+
+</resources>
