@@ -26,7 +26,7 @@ import com.moki.manage.api.MokiManage;
  * With the relevant initialization info held as constants in this class the only parameter that the {@link #getMokiManage(android.content.Context)} function needs is a context
  */
 public class MMManager {
-    private static final String API_KEY = "bf517fc9-5993-49ea-9d2c-2f719447e5e6";
+    private static final String API_KEY = "MOKI_MANAGE_API_KEY";
     private static final boolean ENABLE_AppSettingsManagement = true;
     private static final boolean ENABLE_AppEnvironmentManagement = true;
     private static final boolean ENABLE_Compliance = false;

@@ -1,9 +1,13 @@
 package com.moki.touch.application;
 
+import android.annotation.TargetApi;
 import android.app.Application;
 import android.content.Context;
+import android.os.Build;
 
 import com.moki.manage.api.MokiManage;
+import com.moki.sdk.core.MokiApplication;
+import com.moki.sdk.core.MokiCore;
 import com.moki.touch.util.MMManager;
 
 /**
@@ -23,14 +27,16 @@ import com.moki.touch.util.MMManager;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class MokiTouchApplication extends Application {
+public class MokiTouchApplication extends MokiApplication {
 
     private MokiManage mokiManage;
     static Context context;
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     @Override
     public void onCreate() {
         super.onCreate();
         context = this;
+        registerActivityLifecycleCallbacks(this);
         mokiManage = MMManager.getMokiManage(this);
         mokiManage.resume();
     }

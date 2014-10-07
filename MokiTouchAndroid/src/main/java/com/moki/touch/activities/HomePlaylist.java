@@ -19,7 +19,10 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import com.crashlytics.android.Crashlytics;
 import com.moki.asm.views.AppSettingsActivity;
+import com.moki.sdk.logging.data.model.MokiLogging;
+import com.moki.touch.copy.MTAppSettingsActivity;
 import com.moki.touch.fragments.IdleResetDialogFragment;
 import com.moki.touch.fragments.PlaylistFragment;
 import com.moki.touch.fragments.views.ButtonViewBar;
@@ -72,6 +75,7 @@ public class HomePlaylist extends PlaylistActivity implements IGestureDetected{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Crashlytics.start(this);
         context = this;
         barLayout = (LinearLayout)findViewById(R.id.button_view);
         gestureDetector = new GestureDetector(this, new SwipeGestureDetector());
@@ -91,6 +95,7 @@ public class HomePlaylist extends PlaylistActivity implements IGestureDetected{
         super.onResume();
         IntentFilter buttonFilter = new IntentFilter(ButtonViewBar.BUTTON_ACTION);
         registerReceiver(buttonReceiver, buttonFilter);
+        MokiLogging.addBreadcrumb("HomePlaylist onResume");
     }
 
     private void configureLinkBar() {
@@ -239,8 +244,16 @@ public class HomePlaylist extends PlaylistActivity implements IGestureDetected{
     }
 
     private void openSettings() {
-        Intent settingsIntent = new Intent(this, AppSettingsActivity.class);
-        startActivity(settingsIntent);
+        Intent settingsIntent = new Intent(this, MTAppSettingsActivity.class);
+        startActivityForResult(settingsIntent, 0);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == 1) {
+            this.finish();
+        }
     }
 
     private void createPasswordDialog() {

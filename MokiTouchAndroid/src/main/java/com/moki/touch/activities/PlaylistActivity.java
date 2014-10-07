@@ -14,6 +14,7 @@ import android.view.MotionEvent;
 import com.moki.asm.MokiASM;
 import com.moki.follow.me.FollowMeGestureDetector;
 import com.moki.manage.api.MokiManage;
+import com.moki.sdk.logging.data.model.MokiLogging;
 import com.moki.touch.R;
 import com.moki.touch.base.BaseScreenController;
 import com.moki.touch.models.ContentObject;
@@ -83,6 +84,7 @@ public class PlaylistActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        MokiLogging.addBreadcrumb("PlaylistActivity onResume");
         //to detect when an image or video is finished
         IntentFilter contentFilter = new IntentFilter(BaseScreenController.CONTENT_FINISHED);
         registerReceiver(contentFinishedReceiver, contentFilter);

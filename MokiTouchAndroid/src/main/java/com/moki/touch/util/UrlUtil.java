@@ -48,7 +48,7 @@ public class UrlUtil {
     };
 
     public static String addHttp(String url) {
-        if (!url.contains("http://") && !url.contains("https://")){
+        if (url != null && !url.contains("http://") && !url.contains("https://")){
             url = "http://" + url;
         }
         return url;

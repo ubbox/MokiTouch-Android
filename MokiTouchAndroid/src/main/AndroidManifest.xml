@@ -27,7 +27,7 @@
 
     <uses-sdk
         android:minSdkVersion="13"
-        android:targetSdkVersion="16" />
+        android:targetSdkVersion="19" />
 
     <application
         android:name="com.moki.touch.application.MokiTouchApplication"
@@ -35,11 +35,11 @@
         android:hardwareAccelerated="true"
         android:icon="@drawable/mt_logo"
         android:label="@string/app_name"
-        android:debuggable="true"
-        android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
         <activity
             android:name="com.moki.touch.activities.HomePlaylist"
-            android:windowSoftInputMode="stateHidden" >
+            android:windowSoftInputMode="stateHidden"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -49,7 +49,7 @@
         <activity
             android:name="com.moki.touch.activities.PlaylistActivity"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name="com.moki.asm.views.AppSettingsActivity" />
+        <activity android:name=".copy.MTAppSettingsActivity" />
         <activity android:name="com.moki.asm.views.AppSettingsHolderActivity" />
         <activity
             android:name="com.moki.network.views.DiagnosticsViewsActivity"
@@ -112,6 +112,7 @@
 
         <service android:name="com.moki.aem.utils.LoggingService" >
         </service>
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="CRASHLYTICS_API_KEY"/>
     </application>
 
 </manifest>

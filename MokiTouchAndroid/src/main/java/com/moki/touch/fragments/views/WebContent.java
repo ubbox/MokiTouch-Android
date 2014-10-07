@@ -188,7 +188,7 @@ public class WebContent extends BaseScreenController implements DownloadListener
         webView.getSettings().setJavaScriptEnabled(true);
         // Set cache size to 32 mb by default. should be more than enough
         webView.getSettings().setAppCacheMaxSize(1024 * 1024 * 32);
-        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
 
         String appCachePath = context.getCacheDir().getAbsolutePath();
         webView.getSettings().setAppCachePath(appCachePath);
@@ -366,7 +366,6 @@ public class WebContent extends BaseScreenController implements DownloadListener
                 webView.clearFormData();
                 webView.clearCache(true);
                 webView.clearSslPreferences();
-                webView.destroy();
                 if (context != null) {
                     CookieSyncManager.createInstance(context);
                     CookieManager cookieManager = CookieManager.getInstance();

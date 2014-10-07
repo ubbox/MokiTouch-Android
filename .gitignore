@@ -33,6 +33,9 @@ local.properties
 *~
 *.swp
 
-#Mac system files
+# Mac system files
 
 *.DS_Store
+
+# Crashlytics 
+com_crashlytics_export_strings.xml
